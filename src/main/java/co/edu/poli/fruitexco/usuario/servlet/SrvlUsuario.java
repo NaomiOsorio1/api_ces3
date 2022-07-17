@@ -105,7 +105,7 @@ public class SrvlUsuario extends HttpServlet {
             usu.setStatus(body.get("status").getAsString());
             out.print(gson.toJson(usu));
         }else{
-            String error = "No se ha encontrado el objeto.";
+            String error = "No se ha encontrado el usuario.";
             out.print(gson.toJson(error));
         }
 
@@ -128,12 +128,12 @@ public class SrvlUsuario extends HttpServlet {
         if (index != -1){
 
             SrvlUsuario.USUARIOS.remove(index);
-            String mensaje = "Elemento eliminado con exito.";
+            String mensaje = "Usuario eliminado con exito.";
             out.print(gson.toJson(mensaje));
 
         }else{
 
-            String error = "No se ha encontrado el objeto.";
+            String error = "No se ha encontrado el usuario.";
             out.print(gson.toJson(error));
 
         }
