@@ -40,7 +40,7 @@ public class SrvlUsuario extends HttpServlet {
         String id = request.getParameter("id");
 
         if (id != null){
-            Usuario usu = buscarUsuario(id);
+            Usuario usu = searchUsuario(id);
             out.print(gson.toJson(usu));
         }else {
             out.print(gson.toJson(SrvlUsuario.USUARIOS));
@@ -95,7 +95,7 @@ public class SrvlUsuario extends HttpServlet {
         String id = request.getParameter("id");
 
         if (id != null) {
-            Usuario usu = buscarUsuario(id);
+            Usuario usu = searchUsuario(id);
             usu.setEmail(body.get("email").getAsString());
             usu.setUserName(body.get("userName").getAsString());
             usu.setPassword(body.get("password").getAsString());
@@ -117,7 +117,7 @@ public class SrvlUsuario extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String id = request.getParameter("id");
-        int index = buscarIndex(id);
+        int index = searchIndex(id);
         ServletOutputStream out = response.getOutputStream();
         response.setContentType("application/json");
 
@@ -142,7 +142,7 @@ public class SrvlUsuario extends HttpServlet {
 
     }
 
-    private Usuario buscarUsuario(String id) {
+    private Usuario searchUsuario(String id) {
 
         for (Usuario usu: SrvlUsuario.USUARIOS) {
 
@@ -154,7 +154,7 @@ public class SrvlUsuario extends HttpServlet {
         return null;
     }
 
-    private int buscarIndex(String id) {
+    private int searchIndex(String id) {
         int i = 0;
 
         for (Usuario usu: SrvlUsuario.USUARIOS) {
