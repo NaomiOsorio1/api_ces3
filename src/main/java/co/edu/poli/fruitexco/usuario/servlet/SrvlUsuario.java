@@ -23,7 +23,7 @@ public class SrvlUsuario extends HttpServlet {
             Arrays.asList(
                     new Usuario(1, "andres@gmail.com", "Andres", "02874937283", "3157495246", "Calle 48 # 125 - 4", "ADMINISTRADOR", "ACTIVO"),
                     new Usuario(2, "erikcano@gmail.com", "Erik", "783hd874r8", "3214834154", "Calle 86 # 107 - 2", "CANDIDATO", "ACTIVO"),
-                    new Usuario(1, "alejo2@gmail.com", "Alejandro", "936646g4rg", "31284959393", "Calle 26 # 80 - 48", "CANDIDATO", "ACTIVO")
+                    new Usuario(3, "alejo2@gmail.com", "Alejandro", "936646g4rg", "31284959393", "Calle 26 # 80 - 48", "CANDIDATO", "ACTIVO")
             )
 
     );
